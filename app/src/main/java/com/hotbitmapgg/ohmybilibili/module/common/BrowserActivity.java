@@ -26,6 +26,7 @@ import com.hotbitmapgg.ohmybilibili.R;
 import com.hotbitmapgg.ohmybilibili.base.RxBaseActivity;
 import com.hotbitmapgg.ohmybilibili.utils.ClipboardUtil;
 import com.hotbitmapgg.ohmybilibili.utils.ConstantUtil;
+import com.hotbitmapgg.ohmybilibili.utils.SystemBarHelper;
 import com.hotbitmapgg.ohmybilibili.utils.ToastUtil;
 import com.hotbitmapgg.ohmybilibili.widget.CircleProgressView;
 
@@ -87,6 +88,10 @@ public class BrowserActivity extends RxBaseActivity
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null)
             supportActionBar.setDisplayHomeAsUpEnabled(true);
+
+        //设置StatusBar透明
+        SystemBarHelper.immersiveStatusBar(this);
+        SystemBarHelper.setPadding(this, mToolbar);
     }
 
     @Override
